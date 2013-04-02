@@ -1,0 +1,11 @@
+{% if latest_offense_list %}
+    <ul>
+    {{ latest_offense_list.offense__category }}
+    {% for incident in latest_offense_list %}
+        <li><a href="/incidents/{{ incident.id }}/">{{ incident.date }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No incidents are available.</p>
+{% endif %}
+

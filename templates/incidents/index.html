@@ -1,0 +1,60 @@
+<html>
+<head>
+
+ <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+ <!--[if lte IE 8]>
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
+ <![endif]-->
+ <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+
+<style type ="text/css">
+
+#map { height: 500px; }
+
+</style>
+</head>
+
+<body>
+
+<div id="map"></div>
+<script>
+
+var map = L.map('map').setView([35.136881,-89.968491], 11);
+
+L.tileLayer('http://{s}.tile.cloudmade.com/d74845ab9f4940669ab34ffe4c61c93e/997/256/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+    maxZoom: 18
+}).addTo(map);
+
+
+
+
+
+</script>
+
+
+
+{% if latest_incident_list %}
+    <ul>
+    {% for incident in latest_incident_list %}
+        <li><a href="/incidents/{{ incident.id }}/">{{ incident.offense__category }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No incidents are available.</p>
+{% endif %}
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

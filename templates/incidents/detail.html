@@ -1,0 +1,8 @@
+<a href="/incidents/">See all</a><br />
+<strong>Date/time:</strong> {{ incident.date }}<br />
+<strong>Offense category:</strong> <a href="/incidents/offense/{{ incident.offense__category }}/">{{ incident.offense__category }} </a><br />
+<strong>Specific offense:</strong> {{ incident.offense }}<br />
+<strong>Address:</strong> {{ incident.address }} <br />
+<strong>Case number:</strong> {{ incident.caseno }} <br />
+<strong>Ward:</strong> {{ incident.ward }} <br />
+<strong>Lat/long:</strong> {{ incident.lat }}, {{ incident.long }}
